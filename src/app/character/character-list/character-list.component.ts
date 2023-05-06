@@ -14,7 +14,7 @@ export class CharacterListComponent implements  OnInit{
 
   ngOnInit(): void {
     this.characterList = [
-      {},{},{},
+      {},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},
 
     ];
     // esses dados virão do serviço da marvel
