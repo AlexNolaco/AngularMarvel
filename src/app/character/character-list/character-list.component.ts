@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { CharacterService } from '../character.service';
 import { Character } from '../models/character.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-character-list',
@@ -9,7 +10,10 @@ import { Character } from '../models/character.model';
   styleUrls: ['./character-list.component.scss'],
 })
 export class CharacterListComponent implements OnInit {
-  constructor(private characterService: CharacterService) {}
+  constructor(
+    private characterService: CharacterService,
+    private router: Router
+  ) {}
   characterList: Character[] = [];
 
   rowspan = 1;
@@ -22,15 +26,21 @@ export class CharacterListComponent implements OnInit {
     keyWord = 'hulk';
     if (keyWord) {
       await this.characterService
-        .getCharacters(keyWord)
+        .getCharactersByKeyword(keyWord)
         .subscribe((characters) => {
           this.characterList = characters;
         });
     }
   }
 
-  getImage(character: any): string {
-    return this.characterService.getImage('landscape_incredible', character.thumbnail);
+  getImage(character: Character): string {
+    return this.characterService.getImage(
+      'landscape_incredible',
+      character.thumbnail
+    );
   }
 
+  redirectToDetailPage(character: Character) {
+    this.router.navigateByUrl(`/character-details/${character.id}`);
+  }
 }

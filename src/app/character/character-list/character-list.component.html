@@ -1,6 +1,8 @@
 <app-search-bar
-[placeHolder]="'Digite o nome do herói'"
-[lastSearch]="true" (click)="getCharacters('iron')">
+  [placeHolder]="'Digite o nome do herói'"
+  [lastSearch]="true"
+  (click)="getCharacters('iron')"
+>
 </app-search-bar>
 
 <mat-grid-list cols="4" rowHeight="250px" gutterSize="15px">
@@ -10,8 +12,9 @@
     [style.background]="color"
   >
     <app-character-card
-    [character]="character"
-    [image]="getImage(character)"
+      (click)="redirectToDetailPage(character)"
+      [character]="character"
+      [image]="getImage(character)"
     ></app-character-card>
 
     <mat-grid-tile-header>
@@ -19,4 +22,4 @@
     </mat-grid-tile-header>
   </mat-grid-tile>
 </mat-grid-list>
-<br><br><br>
+<br /><br /><br />

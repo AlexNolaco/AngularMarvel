@@ -16,11 +16,17 @@ import { Thumbnail } from './models/thumbnail.model';
 export class CharacterService {
   constructor(private http: HttpClient) {}
 
-  getCharacters(keyWord: string): Observable<Character[]> {
+  getCharactersByKeyword(keyWord: string): Observable<Character[]> {
     const options = new HttpParams().set('nameStartsWith', keyWord);
     return this.http
       .get<Character[]>(`${environment.apiUrl}characters`, { params: options })
       .pipe(map((response: any) => response.data.results));
+  }
+
+  getCharacterById(id: number): Observable<Character[]> {
+    return this.http
+      .get<Character>(`${environment.apiUrl}characters/${id}`)
+      .pipe(map((response: any) => response.data.results[0]));
   }
 
   getImage(variant: string, thumbnail: Thumbnail): string {

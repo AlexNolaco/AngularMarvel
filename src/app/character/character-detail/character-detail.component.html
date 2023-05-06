@@ -1,2 +1,24 @@
-<p>character-detail works!</p>
-<app-character-card></app-character-card>
+<mat-grid-list class="list" cols="4" rowHeight="4:2" gutterSize="10px">
+  <mat-grid-tile class="tile" [colspan]="1" [rowspan]="3">
+    <app-character-card
+      [character]="character"
+      [image]="characterImage"
+    ></app-character-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="3" [rowspan]="1" [style.background]="'#f7f2f2'">
+    <h2>{{ character?.name }}</h2>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="3" [rowspan]="2" [style.background]="'#f7f2f2'">
+    {{ character?.description }}
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="4" [style.background]="'#f7f2f2'">
+    Links Relacionados<br />
+    <ul>
+      <li *ngFor="let person of character?.urls">
+        {{ person.type }}<br />
+        <a target="_blank" [attr.href]="person.url">{{ person.url }}</a>
+      </li>
+    </ul>
+  </mat-grid-tile>
+</mat-grid-list>

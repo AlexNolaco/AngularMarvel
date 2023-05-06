@@ -15,7 +15,7 @@ const routes: Routes = [
     component: CharacterListComponent
   },
   {
-    path: 'character-details',
+    path: 'character-details/:id',
     component: CharacterDetailComponent
   }
 ];
