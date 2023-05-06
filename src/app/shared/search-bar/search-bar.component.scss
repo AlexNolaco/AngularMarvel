@@ -5,6 +5,10 @@
     margin-left: 10px!important;
     box-shadow: 5px 5px 5px black;
     cursor: pointer;
+
+    .icon {
+      margin-left: 10px;
+    }
   }
   .search-button:hover, .last-search-button:hover {
     transform: scale(1.03);

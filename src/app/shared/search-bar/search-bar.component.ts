@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {FormControl} from '@angular/forms';
 
 @Component({
@@ -7,6 +7,8 @@ import {FormControl} from '@angular/forms';
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent {
+  @Input() placeHolder: any;
+  @Input() lastSearch = true;
   myControl = new FormControl('');
 
 }
