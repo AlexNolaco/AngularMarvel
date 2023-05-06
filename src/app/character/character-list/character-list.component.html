@@ -1,15 +1,22 @@
 <app-search-bar
 [placeHolder]="'Digite o nome do herói'"
-[lastSearch]="true"></app-search-bar>
+[lastSearch]="true" (click)="getCharacters('iron')">
+</app-search-bar>
 
-<mat-grid-list cols="3" rowHeight="200px" gutterSize="10px">
+<mat-grid-list cols="4" rowHeight="250px" gutterSize="15px">
   <mat-grid-tile
+    title="Clique para ver os detalhes"
     *ngFor="let character of characterList"
     [style.background]="color"
   >
-    <app-character-card [character]="character"></app-character-card>
+    <app-character-card
+    [character]="character"
+    [image]="getImage(character)"
+    ></app-character-card>
+
     <mat-grid-tile-header>
-      <h4>{{ character }}</h4>
+      <h4>{{ character.name }}</h4>
     </mat-grid-tile-header>
   </mat-grid-tile>
 </mat-grid-list>
+<br><br><br>

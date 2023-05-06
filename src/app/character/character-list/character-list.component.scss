@@ -1,9 +1,28 @@
 mat-grid-tile {
   box-shadow: 5px 5px 5px black;
   cursor: pointer;
+  max-width: 464px;
+  max-height: 261px;
+
+  min-width: 100px;
+  margin-bottom: 50px;
+  mat-grid-tile-footer {
+    background-color:  red;
+    opacity: 0.6;
+    h4 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 15px;
+      max-height: 20px;
+    }
+
+  }
 }
 
 mat-grid-tile:hover {
-  transform: scale(1.03);
-  transition: all 0.5s;
+
+  transition: all 0.1s;
+
+  transform: scale(1.07);
 }
+
