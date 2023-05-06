@@ -1,7 +1,9 @@
-.header {
-  background-color: red;
-  .logo {
-    background-image: url("../../../assets/logoMarvelCompressed.jpg");
+#header {
+  box-shadow: 5px 5px 5px black;
+  background-color: #f70207;
+  height: 45px;
+  #logo {
+    width: 100px;
   }
 }
 

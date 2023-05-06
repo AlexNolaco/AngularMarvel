@@ -1,1 +1,6 @@
-<p>character-list works!</p>
+<app-search-bar></app-search-bar>
+<mat-grid-list cols="5" rowHeight="4:3" gutterSize="10px">
+  <mat-grid-tile *ngFor="let character of characterList" [style.background]="color" >
+    <app-character-card [character]="character"></app-character-card>
+  </mat-grid-tile>
+</mat-grid-list>

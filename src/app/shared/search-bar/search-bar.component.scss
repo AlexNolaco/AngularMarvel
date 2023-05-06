@@ -1,0 +1,18 @@
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center!important;
+
+  .search-button, .last-search-button{
+    height: 54px!important;
+    margin-bottom: 20px!important;
+    margin-left: 10px!important;
+    box-shadow: 5px 5px 5px black;
+    cursor: pointer;
+  }
+
+  .search-button:hover, .last-search-button:hover {
+    transform: scale(1.03);
+    transition: all 0.5s;
+  }
+}

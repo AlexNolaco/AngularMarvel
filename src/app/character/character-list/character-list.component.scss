@@ -1,0 +1,9 @@
+mat-grid-tile {
+  box-shadow: 5px 5px 5px black;
+  cursor: pointer;
+}
+
+mat-grid-tile:hover {
+  transform: scale(1.03);
+  transition: all 0.5s;
+}
