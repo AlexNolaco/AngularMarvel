@@ -1,13 +1,5 @@
 .detail-grid,
 mat-grid-list {
-  div > mat-grid-tile.mat-grid-tile.character-name > div {
-    display: block !important;
-  }
-  .character-image {
-    box-shadow: 5px 5px 5px black;
-    border-radius: 15px;
-
-  }
 
   .character-image:hover,
   .character-name:hover,
@@ -25,8 +17,12 @@ mat-grid-list {
 
   .character-name {
     h2 {
-      font-family: "Snell Roundhand", cursive;
+      font-family: "Courier New", monospace;
       font-size: 25px;
+    }
+    .character-id {
+      margin-left: 0px;
+      margin-top: 15px;
     }
   }
 
@@ -55,7 +51,6 @@ mat-grid-list {
         margin-bottom: 15px;
       }
     }
-
   }
 }
 
