@@ -63,3 +63,7 @@ mat-grid-list {
   margin-left: 15px;
   margin-right: 15px;
 }
+
+::ng-deep mat-grid-tile.mat-grid-tile.character-name div {
+  overflow: hidden!important;
+}
