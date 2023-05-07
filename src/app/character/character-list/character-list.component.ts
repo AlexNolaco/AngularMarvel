@@ -15,13 +15,16 @@ export class CharacterListComponent {
     private router: Router
   ) {}
   characterList: Character[] = [];
+  localStorageKey = 'character-keword';
+  noResult: boolean = false;
 
-  async getCharacters(keyWord: string) {
+  getCharacters(keyWord: string) {
     if (keyWord) {
-      await this.characterService
+      this.characterService
         .getCharactersByKeyword(keyWord)
         .subscribe((characters) => {
           this.characterList = characters;
+          this.noResult = this.notFound();
         });
     }
   }
@@ -35,5 +38,16 @@ export class CharacterListComponent {
 
   redirectToDetailPage(character: Character) {
     this.router.navigateByUrl(`/character-details/${character.id}`);
+  }
+
+  notFound() {
+    return this.characterList.length == 0;
+  }
+
+  hasContent() {
+    return (
+      this.characterList.length > 0 ||
+      localStorage.getItem(this.localStorageKey)
+    );
   }
 }

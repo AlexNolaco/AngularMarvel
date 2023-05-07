@@ -1,10 +1,11 @@
 <app-search-bar
-  [placeHolder]="'Digite o nome do herói'"
-  [localStorageKey]="'character-keyword'"
+  [placeHolder]="'Nome do personagem'"
+  [localStorageKey]="localStorageKey"
   (keyWord)="getCharacters($event)">
 </app-search-bar>
 
-<mat-grid-list cols="4" rowHeight="250px" gutterSize="15px">
+
+<mat-grid-list cols="4" *ngIf="hasContent() && !noResult" rowHeight="250px" gutterSize="15px">
   <mat-grid-tile
    *ngFor="let character of characterList"
     title="Clique para ver os detalhes"
@@ -21,4 +22,7 @@
     </mat-grid-tile-header>
   </mat-grid-tile>
 </mat-grid-list>
+<app-not-found-page *ngIf="noResult"></app-not-found-page>
+<app-landing-page *ngIf="!hasContent()">
+</app-landing-page>
 <br /><br /><br />

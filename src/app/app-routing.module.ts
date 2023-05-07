@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CharacterListComponent } from './character/character-list/character-list.component';
 import { CharacterDetailComponent } from './character/character-detail/character-detail.component';
+import { NotFoundPageComponent } from './shared/not-found-page/not-found-page.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
   {
     path: 'character-details/:id',
     component: CharacterDetailComponent
-  }
+  },
+  { path: '**', component: NotFoundPageComponent }
 ];
 
 @NgModule({
