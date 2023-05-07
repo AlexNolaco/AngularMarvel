@@ -44,7 +44,13 @@ export class CharacterDetailComponent implements OnInit {
       .subscribe((character) => {
         this.character = character;
         this.getImage();
+        this.getDescription();
       });
+  }
+
+  getDescription() {
+    if (!this.character.description)
+      this.character.description = "Infelizmente não há descrição disponível para este personagem."
   }
 
   getImage() {

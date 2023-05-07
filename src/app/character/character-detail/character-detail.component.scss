@@ -1,0 +1,70 @@
+.detail-grid,
+mat-grid-list {
+  div > mat-grid-tile.mat-grid-tile.character-name > div {
+    display: block !important;
+  }
+  .character-image {
+    box-shadow: 5px 5px 5px black;
+    border-radius: 15px;
+
+  }
+
+  .character-image:hover,
+  .character-name:hover,
+  .character-description:hover,
+  .character-related-links:hover
+  {
+    -webkit-filter: drop-shadow(25px 25px 25px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, 0.5));
+  }
+
+  .shadow {
+    box-shadow: 5px 5px 5px black;
+    border-radius: 15px;
+  }
+
+  .character-name {
+    h2 {
+      font-family: "Snell Roundhand", cursive;
+      font-size: 25px;
+    }
+  }
+
+  .character-description {
+    position: absolute;
+    text-align: justify;
+    left: 5px;
+
+    .description {
+      margin-left: 0px;
+      margin-top: 15px;
+    }
+  }
+
+  .character-related-links {
+    position: absolute;
+    text-align: left;
+    left: 5px;
+    border-radius: 15px;
+
+    ul {
+      padding-inline-start: 0px!important;
+      li {
+        list-style-type: none;
+        margin-left: 0px;
+        margin-bottom: 15px;
+      }
+    }
+
+  }
+}
+
+::ng-deep mat-grid-tile.mat-grid-tile.character-name div,
+::ng-deep mat-grid-tile.mat-grid-tile.character-description div,
+::ng-deep mat-grid-tile.mat-grid-tile.character-related-links div {
+  display: block !important; /* or whichever you need */
+  overflow: auto;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
