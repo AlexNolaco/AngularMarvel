@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { CharacterService } from '../character.service';
 import { Character } from '../models/character.model';
@@ -9,21 +9,17 @@ import { Router } from '@angular/router';
   templateUrl: './character-list.component.html',
   styleUrls: ['./character-list.component.scss'],
 })
-export class CharacterListComponent implements OnInit {
+export class CharacterListComponent {
   constructor(
     private characterService: CharacterService,
     private router: Router
   ) {}
   characterList: Character[] = [];
-
   rowspan = 1;
   colspan = 1;
   color = 'red';
 
-  ngOnInit(): void {}
-
   async getCharacters(keyWord: string) {
-    keyWord = 'hulk';
     if (keyWord) {
       await this.characterService
         .getCharactersByKeyword(keyWord)

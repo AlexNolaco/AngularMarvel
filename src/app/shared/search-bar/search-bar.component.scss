@@ -1,17 +1,14 @@
 .search-form {
-  .search-button, .last-search-button{
-    height: 54px!important;
+  .search-button{
+    height: 56px!important;
     margin-bottom: 13px !important;
-    margin-left: 10px!important;
-    box-shadow: 5px 5px 5px black;
+    margin-left: -2px!important;
+    border-radius: 0px;
     cursor: pointer;
 
     .icon {
       margin-left: 10px;
     }
   }
-  .search-button:hover, .last-search-button:hover {
-    transform: scale(1.03);
-    transition: all 0.5s;
-  }
+
 }

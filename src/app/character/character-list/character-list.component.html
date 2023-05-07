@@ -1,14 +1,13 @@
 <app-search-bar
   [placeHolder]="'Digite o nome do herói'"
-  [lastSearch]="true"
-  (click)="getCharacters('iron')"
->
+  [localStorageKey]="'character-keyword'"
+  (keyWord)="getCharacters($event)">
 </app-search-bar>
 
 <mat-grid-list cols="4" rowHeight="250px" gutterSize="15px">
   <mat-grid-tile
+   *ngFor="let character of characterList"
     title="Clique para ver os detalhes"
-    *ngFor="let character of characterList"
     [style.background]="color"
   >
     <app-character-card

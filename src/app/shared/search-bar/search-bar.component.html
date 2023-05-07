@@ -1,24 +1,22 @@
 <div class="search-form">
   <mat-form-field class="search-bar" appearance="fill">
-    <mat-label>{{placeHolder}}</mat-label>
-    <input type="text" matInput />
+    <mat-label>{{ placeHolder }}</mat-label>
+    <input
+      id="keyword"
+      type="text"
+      matInput
+      (keydown.enter)="search()"
+      [formControl]="searchBarControl"
+    />
   </mat-form-field>
-  <button title="Buscar"
+  <button
+    title="Buscar"
     class="search-button"
     mat-raised-button
     color="primary"
     matBadgePosition="before"
+    (click)="search()"
   >
     <mat-icon class="icon">search</mat-icon>
-  </button>
-
-  <button title="Recuperar última busca"
-    *ngIf="lastSearch"
-    class="last-search-button"
-    mat-raised-button
-    color="primary"
-    matBadgePosition="before"
-  >
-    <mat-icon class="icon">schedule</mat-icon>
   </button>
 </div>
