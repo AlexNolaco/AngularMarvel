@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { CharacterService } from '../character.service';
 import { Character } from '../models/character.model';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-character-detail',
@@ -34,9 +35,9 @@ export class CharacterDetailComponent implements OnInit {
   }
 
   getDescription(): void {
-    if (!this.character.description)
-      this.character.description =
-        'Infelizmente não há descrição disponível para este personagem.';
+    const description = this.character.description;
+    if (!description || description.trim() == '')
+      this.character.description = environment.messages.character.withoutDescription;
   }
 
   getImage(): void {
