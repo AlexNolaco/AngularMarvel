@@ -15,9 +15,6 @@ export class CharacterListComponent {
     private router: Router
   ) {}
   characterList: Character[] = [];
-  rowspan = 1;
-  colspan = 1;
-  color = 'red';
 
   async getCharacters(keyWord: string) {
     if (keyWord) {

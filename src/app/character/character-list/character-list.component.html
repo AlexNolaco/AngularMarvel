@@ -8,7 +8,7 @@
   <mat-grid-tile
    *ngFor="let character of characterList"
     title="Clique para ver os detalhes"
-    [style.background]="color"
+    [style.background]="'red'"
   >
     <app-character-card
       (click)="redirectToDetailPage(character)"
