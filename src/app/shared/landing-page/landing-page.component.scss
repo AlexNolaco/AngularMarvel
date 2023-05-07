@@ -1,18 +1,19 @@
-div {
+.image-container {
   display: flex;
   justify-content: center;
 
-  img {
+  .image {
     width: 60%;
   }
+
   @media screen and (max-width: 992px) {
-    img {
+    .image {
       width: 65%;
     }
   }
 
   @media screen and (max-width: 600px) {
-    img {
+    .image {
       width: 100%;
     }
   }

@@ -1,12 +1,12 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
-  styleUrls: ['./search-bar.component.scss']
+  styleUrls: ['./search-bar.component.scss'],
 })
-export class SearchBarComponent implements OnInit{
+export class SearchBarComponent implements OnInit {
   searchBarControl = new FormControl('');
   @Input() placeHolder: any;
   @Input() localStorageKey: any;
@@ -16,19 +16,19 @@ export class SearchBarComponent implements OnInit{
     var keyword = this.getKeyWordFromLocalStorage();
     if (keyword) {
       this.fillSearchBarWithExistingKeyWord(keyword);
-      this.emitKeyWordEventValue()
+      this.emitKeyWordEventValue();
     }
   }
 
-  getKeyWordFromLocalStorage(): any {
+  getKeyWordFromLocalStorage(): string | any {
     return localStorage.getItem(this.localStorageKey);
   }
 
-  fillSearchBarWithExistingKeyWord(keyWord: any) {
+  fillSearchBarWithExistingKeyWord(keyWord: any): void {
     this.searchBarControl.setValue(keyWord);
   }
 
-  emitKeyWordEventValue() {
+  emitKeyWordEventValue(): void {
     this.keyWord.emit(this.searchBarControl.value);
   }
 
@@ -37,8 +37,7 @@ export class SearchBarComponent implements OnInit{
     this.emitKeyWordEventValue();
   }
 
-  grabInLocalStorage(keyWord: any) {
+  grabInLocalStorage(keyWord: any): void {
     localStorage.setItem(this.localStorageKey, keyWord);
   }
-
 }

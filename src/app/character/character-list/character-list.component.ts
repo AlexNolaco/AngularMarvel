@@ -16,6 +16,7 @@ export class CharacterListComponent {
   ) {}
   characterList: Character[] = [];
   localStorageKey = 'character-keword';
+  tileBackground = 'red';
   noResult: boolean = false;
 
   getCharacters(keyWord: string) {

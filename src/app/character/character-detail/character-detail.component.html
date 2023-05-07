@@ -1,46 +1,27 @@
 <mat-grid-list class="detail-grid" cols="4" rowHeight="4:2" gutterSize="10px">
   <mat-grid-tile class="character-image shadow" [colspan]="1" [rowspan]="3">
-    <app-character-card
-      class="image-card"
-      [character]="character"
-      [image]="characterImage"
-    ></app-character-card>
+    <app-character-card class="image-card" [image]="characterImage"></app-character-card>
   </mat-grid-tile>
 
-  <mat-grid-tile
-    class="character-name shadow"
-    [colspan]="3"
-    [rowspan]="1"
-    [style.background]="'#f7f2f2'"
-  >
+  <mat-grid-tile class="character-name shadow" [colspan]="3" [rowspan]="1" [style.background]="tileBackground">
     <h2>{{ character?.name }}</h2>
     <mat-divider></mat-divider>
     <div class="character-id">ID: {{ character?.id }}</div>
   </mat-grid-tile>
 
-  <mat-grid-tile
-    class="character-description shadow"
-    [colspan]="3"
-    [rowspan]="2"
-    [style.background]="'#f7f2f2'"
-  >
+  <mat-grid-tile class="character-description shadow" [colspan]="3" [rowspan]="2" [style.background]="tileBackground">
     <h3>Descrição</h3>
     <mat-divider></mat-divider>
     <div class="description">{{ character?.description }}</div>
   </mat-grid-tile>
 
-  <mat-grid-tile
-    class="character-related-links shadow"
-    [colspan]="4"
-    [rowspan]="2"
-    [style.background]="'#f7f2f2'"
-  >
+  <mat-grid-tile class="character-related-links shadow" [colspan]="4" [rowspan]="2" [style.background]="tileBackground">
     <h3>Links relacionados</h3>
     <mat-divider></mat-divider>
     <ul>
-      <li *ngFor="let person of character?.urls">
-        <strong>{{ person.type }}</strong><br />
-        <a target="_blank" [attr.href]="person.url">{{ person.url }}</a>
+      <li *ngFor="let character of character?.urls">
+        <strong>{{ character.type }}</strong><br />
+        <a target="_blank" [attr.href]="character.url">{{ character.url }}</a>
       </li>
     </ul>
   </mat-grid-tile>

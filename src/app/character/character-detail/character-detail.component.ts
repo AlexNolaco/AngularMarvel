@@ -1,22 +1,8 @@
-import {
-  AfterContentInit,
-  AfterViewInit,
-  Component,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { CharacterService } from '../character.service';
 import { Character } from '../models/character.model';
-
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
 
 @Component({
   selector: 'app-character-detail',
@@ -32,28 +18,28 @@ export class CharacterDetailComponent implements OnInit {
   id: string | any;
   character: Character | any;
   characterImage: string | any;
+  tileBackground = '#f7f2f2';
 
-  async ngOnInit() {
+  ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    await this.loadData();
+    this.loadData();
   }
 
-  async loadData() {
-    await this.characterService
-      .getCharacterById(this.id)
-      .subscribe((character) => {
-        this.character = character;
-        this.getImage();
-        this.getDescription();
-      });
+  loadData(): void {
+    this.characterService.getCharacterById(this.id).subscribe((result) => {
+      this.character = result;
+      this.getDescription();
+      this.getImage();
+    });
   }
 
-  getDescription() {
+  getDescription(): void {
     if (!this.character.description)
-      this.character.description = "Infelizmente não há descrição disponível para este personagem."
+      this.character.description =
+        'Infelizmente não há descrição disponível para este personagem.';
   }
 
-  getImage() {
+  getImage(): void {
     this.characterImage = this.characterService.getImage(
       'detail',
       this.character.thumbnail

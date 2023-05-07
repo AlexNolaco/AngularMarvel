@@ -1,9 +1,6 @@
-import {
-  HttpClient,
-  HttpParams,
-} from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Character } from './models/character.model';
@@ -32,5 +29,4 @@ export class CharacterService {
   getImage(variant: string, thumbnail: Thumbnail): string {
     return `${thumbnail.path}/${variant}.${thumbnail.extension}`;
   }
-
 }

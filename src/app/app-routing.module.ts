@@ -13,17 +13,17 @@ const routes: Routes = [
   },
   {
     path: 'search-characters',
-    component: CharacterListComponent
+    component: CharacterListComponent,
   },
   {
     path: 'character-details/:id',
-    component: CharacterDetailComponent
+    component: CharacterDetailComponent,
   },
-  { path: '**', component: NotFoundPageComponent }
+  { path: '**', component: NotFoundPageComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,11 +1,9 @@
 .detail-grid,
 mat-grid-list {
-
   .character-image:hover,
   .character-name:hover,
   .character-description:hover,
-  .character-related-links:hover
-  {
+  .character-related-links:hover {
     -webkit-filter: drop-shadow(25px 25px 25px rgba(0, 0, 0, 0.5));
     filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, 0.5));
   }
@@ -44,7 +42,7 @@ mat-grid-list {
     border-radius: 15px;
 
     ul {
-      padding-inline-start: 0px!important;
+      padding-inline-start: 0px !important;
       li {
         list-style-type: none;
         margin-left: 0px;
@@ -57,7 +55,7 @@ mat-grid-list {
 ::ng-deep mat-grid-tile.mat-grid-tile.character-name div,
 ::ng-deep mat-grid-tile.mat-grid-tile.character-description div,
 ::ng-deep mat-grid-tile.mat-grid-tile.character-related-links div {
-  display: block !important; /* or whichever you need */
+  display: block !important;
   overflow: auto;
   margin-top: 5px;
   margin-left: 15px;
@@ -65,5 +63,5 @@ mat-grid-list {
 }
 
 ::ng-deep mat-grid-tile.mat-grid-tile.character-name div {
-  overflow: hidden!important;
+  overflow: hidden !important;
 }

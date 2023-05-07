@@ -1,22 +1,10 @@
 <div class="search-form">
   <mat-form-field class="search-bar" appearance="fill">
     <mat-label>{{ placeHolder }}</mat-label>
-    <input
-      id="keyword"
-      type="text"
-      matInput
-      (keydown.enter)="search()"
-      [formControl]="searchBarControl"
-    />
+    <input id="keyword" type="text" matInput (keydown.enter)="search()" [formControl]="searchBarControl" />
   </mat-form-field>
-  <button
-    title="Buscar"
-    class="search-button"
-    mat-raised-button
-    color="primary"
-    matBadgePosition="before"
-    (click)="search()"
-  >
+  <button title="Buscar" class="search-button" mat-raised-button color="primary" matBadgePosition="before"
+    (click)="search()">
     <mat-icon class="icon">search</mat-icon>
   </button>
 </div>

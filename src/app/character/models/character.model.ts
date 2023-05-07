@@ -1,5 +1,5 @@
-import { Thumbnail } from "./thumbnail.model";
-import { Url } from "./url.model";
+import { Thumbnail } from './thumbnail.model';
+import { Url } from './url.model';
 
 export interface Character {
   id: number;
