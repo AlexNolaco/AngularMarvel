@@ -33,8 +33,10 @@ export class SearchBarComponent implements OnInit {
   }
 
   search() {
-    this.grabInLocalStorage(this.searchBarControl.value);
-    this.emitKeyWordEventValue();
+    if (this.searchBarControl.value?.trim() != "") {
+      this.grabInLocalStorage(this.searchBarControl.value);
+      this.emitKeyWordEventValue();
+    }
   }
 
   grabInLocalStorage(keyWord: any): void {
