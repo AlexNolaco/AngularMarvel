@@ -24,6 +24,7 @@ export class CharacterDetailComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     this.loadData();
+    this.gotoTop();
   }
 
   loadData(): void {
@@ -31,6 +32,14 @@ export class CharacterDetailComponent implements OnInit {
       this.character = result;
       this.getDescription();
       this.getImage();
+    });
+  }
+
+  gotoTop() {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
     });
   }
 
