@@ -86,7 +86,6 @@
             "browserTarget": "angular-marvel:build"
           }
         },
-
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {

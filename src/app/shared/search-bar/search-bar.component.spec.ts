@@ -8,7 +8,7 @@ describe('SearchBarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SearchBarComponent]
+      declarations: [SearchBarComponent],
     });
     fixture = TestBed.createComponent(SearchBarComponent);
     component = fixture.componentInstance;
@@ -17,5 +17,11 @@ describe('SearchBarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should emit keyword result', () => {
+    const spyResponse = jest.spyOn(component.keyWord, 'emit');
+    component.emitKeyWordEventValue();
+    expect(spyResponse).toHaveBeenCalled();
   });
 });
